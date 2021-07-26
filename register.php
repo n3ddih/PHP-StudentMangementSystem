@@ -7,18 +7,18 @@
 	<title>Register</title>
 </head>
 <body>
-<h1>Register page</h1>
+	<h1>Register page</h1>
 
-<form action="register.php" method="POST">
-	<p>Username:</p>
-	<input type="text" name="username">
-	<p>Email:</p>
-	<input type="text" name="email">
-	<p>Password:</p>
-	<input type="password" name="password">
-	<p>Repeat password:</p>
-	<input type="password" name="password2"><br>
-	<input type="submit">
-</form>
+	<form action="register.php" method="POST">
+		<p>Username:</p>
+		<input type="text" name="username">
+		<p>Email:</p>
+		<input type="text" name="email">
+		<p>Password:</p>
+		<input type="password" name="password">
+		<p>Repeat password:</p>
+		<input type="password" name="password2"><br>
+		<input type="submit">
+	</form>
 </body>
 </html>
