@@ -24,8 +24,9 @@ create table student (
   fullname varchar(50),
   email varchar(40),
   phone varchar(10),
+  isTeacher boolean,
   primary key (id)
 );
 
-insert into student(username, password, fullname, email, phone) values ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789');
+insert into student(username, password, fullname, email, phone) values ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789', False);
 ```
