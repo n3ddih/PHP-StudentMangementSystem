@@ -10,3 +10,21 @@ Xây dựng website quản lý thông tin sinh viên, tài liệu của 1 lớp 
 - Tạo chức năng cho phép giáo viên tổ chức 1 trò chơi giải đố như sau:
   - Giáo viên tạo challenge, trong đó cần thực hiện: upload lên 1 file txt có nội dung là 1 bài thơ, văn,…, tên file được viết dưới định dạng không dấu và các từ cách nhau bởi 1 khoảng trắng. Sau đó nhập gợi ý về quyển sách và submit. (Đáp án chính là tên file mà giáo viên upload lên. Không lưu đáp án ra file, DB,…).
   - Sinh viên xem gợi ý và nhập đáp án. Khi sinh viên nhập đúng thì trả về nội dung bài thơ, văn,… lưu trong file đáp án.
+
+## Setting up database
+
+```sql
+create database smsdb;
+use smsdb;
+
+create table student (
+  id int auto_increment,
+  username varchar(20),
+  password varchar(32),
+  email varchar(40),
+  phone varchar(10),
+  primary key (id)
+);
+
+insert into student(username, password, email, phone) values ('vutq13', '123@123a', 'vutq13@gmail.com', '0234156789');
+```
