@@ -24,7 +24,6 @@ create table student (
   fullname varchar(50),
   email varchar(40),
   phone varchar(10),
-  isTeacher boolean,
   primary key (id)
 );
 
