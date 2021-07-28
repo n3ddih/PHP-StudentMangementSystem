@@ -21,10 +21,11 @@ create table student (
   id int auto_increment,
   username varchar(20),
   password varchar(32),
+  fullname varchar(50),
   email varchar(40),
   phone varchar(10),
   primary key (id)
 );
 
-insert into student(username, password, email, phone) values ('vutq13', '123@123a', 'vutq13@gmail.com', '0234156789');
+insert into student(username, password, fullname, email, phone) values ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789');
 ```
