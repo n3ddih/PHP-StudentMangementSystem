@@ -1,4 +1,5 @@
 <?php
+require_once './dbconnection.php';
 
 class permission{
     public $username;
@@ -16,23 +17,12 @@ class permission{
     function isTeacher(){
         $is_teacher = false;
 
-        $hostname = 'localhost:3306';
-        $username = 'root';
-        $password = '';
-        $dbname = 'smsdb';
-        $conn = mysqli_connect($hostname, $username, $password, $dbname);
-
-        if(!$conn) {
-                die('Cannot connect to the database ' . mysqli_error($conn));
-                exit();
-        }
-
-        echo "Connect to database successfully";
+        $conn = DbConnection::getConnection();
         
         $user = $this->username;
         $pass = $this->password;
         
-        mysqli_close($conn);
+        DbConnection::getConnection($conn);
     }
 }
 
