@@ -38,6 +38,7 @@ insert into user(username, password, fullname, email, phone, role) values ('vinh
 
 - Tạo CSDL người dùng
 - Tạo file index, trang xem info và chức năng thêm người dùng (trong file xem thông tin userinfo.php)
+> Mới tạo cho sinh viên cần thêm cho giáo viên
 
 ## Đang trong quá trình
 
