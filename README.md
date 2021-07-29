@@ -46,7 +46,7 @@ Tạo file login và register, permission.php để xác thực người dùng
 
 ## Todo
 
-- Chức năng xóa người dùng
+- Chức năng sửa, xóa người dùng
 - Gửi tin nhắn cho người dùng
 - Giáo viên upload bài tập --> sinh viên thấy danh sách bài tập
 - Sinh viên upload bài làm
