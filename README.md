@@ -1,4 +1,4 @@
-# PHP-StudentMangementSystem
+# PHP-Student Mangement System
 
 Xây dựng website quản lý thông tin sinh viên, tài liệu của 1 lớp học có các chức năng như sau:
 - Giáo viên có thể thêm, sửa, xóa các thông tin của sinh viên. Thông tin có các trường cơ bản gồm: tên đăng nhập, mật khẩu, họ tên, email, số điện thoại.
