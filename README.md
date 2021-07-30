@@ -19,7 +19,7 @@ use smsdb;
 
 create table user (
   id int auto_increment,
-  username varchar(20),
+  username varchar(20) unique,
   password varchar(32),
   fullname varchar(50),
   email varchar(40),
