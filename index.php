@@ -20,19 +20,27 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
         </style>
     </head>
     <body>
-	<h1>Student Management System</h1>
-	<h4><?php echo "Welcome ".$_SESSION["user"]." !";?></h4>
-	<ul>
-            <li><a href="userinfo.php">View users info</a></li>
+		<div class="row" style="background: #9e9e9e;">
+			<div class="container">
+				<div class="col-sm-12">
+					<h1>Student Management System</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h4><?php echo "Welcome ".$_SESSION["user"]." !";?></h4>
+			<ul>
+					<li><a href="userinfo.php">View users info</a></li>
 
-            <?php if($_SESSION['teacher']){ echo '<li><a href="ass_upload.php">Upload assignment</a></li>'; }?>
+					<?php if($_SESSION['teacher']){ echo '<li><a href="ass_upload.php">Upload assignment</a></li>'; }?>
 
-            <?php if($_SESSION['student']){
-                echo '<li><a href="ass_submit.php">Submit assignment</a></li>';
-                echo '<li><a href="profile_update.php">Update profile</a></li>';
-            } ?>
+					<?php if($_SESSION['student']){
+						echo '<li><a href="ass_submit.php">Submit assignment</a></li>';
+						echo '<li><a href="profile_update.php">Update profile</a></li>';
+					} ?>
 
-            <li><a href="logout.php">Log Out</a></li>
-	</ul>
+					<li><a href="logout.php">Log Out</a></li>
+			</ul>
+		</div>
     </body>
 </html>

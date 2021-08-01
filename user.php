@@ -1,20 +1,22 @@
 <?php
 require_once './dbconnection.php';
 
-class Student {
+class User {
 	
 	private $username;
 	private $password;
 	private $fullname;
 	private $email;
 	private $phone;
+	private $role;
 	
-	function __construct($username, $password, $fullname, $email, $phone) {
+	function __construct($username, $password, $fullname, $email, $phone, $role) {
 		$this->username = $username;
 		$this->password = $password;
 		$this->fullname = $fullname;
 		$this->email = $email;
 		$this->phone = $phone;
+		$this->role = $role;
 	}
 	
 	function getUsername() {
@@ -37,20 +39,26 @@ class Student {
 		return $this->phone;
 	}
 
-	function save(){
+	function getRole() {
+		return $this->role;
+	}
+	
+	public function save(){
 		// Get connection
 		$conn = DbConnection::getConnection();
-		// Query
-		$query = "INSERT INTO student(username, password, fulname, email, phone, isTeacher) VALUES (?, ?, ?, ?, ?, ?);";
-		// Prepare and bind
-		$con_prep = $conn->prepare($query);
-		$con_prep->bind_param($user, $pass, $fullname, $email, $phone);
 		
 		$user = $this->getUsername();
 		$pass = $this->getPassword();
 		$fullname = $this->getFullname();
 		$email = $this->getEmail();
 		$phone = $this->getPhone();
+		$role = $this->getRole();
+		
+		// Query
+		$query = "INSERT INTO user(username, password, fulname, email, phone, role) VALUES (?, ?, ?, ?, ?, ?);";
+		// Prepare and bind
+		$con_prep = $conn->prepare($query);
+		$con_prep->bind_param($user, $pass, $fullname, $email, $phone, $role);
 		
 		// execute
 		$ret = $con_prep->execute();
@@ -59,23 +67,37 @@ class Student {
 		return $ret;
 	}
 	
-	function getAll(){
+	public static function getAll(){
 		$rows = array();
 		// Get connection
 		$conn = DbConnection::getConnection();
-		$query = "SELECT * FROM student";
+		$query = "SELECT * FROM user";
 		$result = mysqli_query($conn, $query);
 		if(mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_object($result)){
-				$student = new Student($row->username, $row->password, $row->fullname, $row->email, $row->phone);
-				$rows[] = $student;
+				$user = new Student($row->username, $row->password, $row->fullname, $row->email, $row->phone, $row->role);
+				$rows[] = $user;
 			}
 		}
 		// close connection
 		DbConnection::closeConnection($conn);
 		return $rows;
 	}
+	
+	public function delete($username){
+		// Get connection
+		$conn = DbConnection::getConnection();
+		$query = "DELETE FROM user WHERE username=?";
+		$con_prep = $conn->prepare($query);
+		$con_prep->bind_param($username);
+		// execute
+		$ret = $con_prep->execute();
+		// close connection
+		DbConnection::closeConnection($conn);
+		return $ret;
+	}
+
 
 }
 
-?>
+

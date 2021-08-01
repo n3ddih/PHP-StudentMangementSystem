@@ -12,11 +12,11 @@
     </head>
 	
     <body>
-		<?php require_once './student.php';?>
+		<?php require_once './user.php';?>
 		<div class="container">
 			<div class="row with-margin">
 				<div class="col-sm-12">
-					<form action="add_student.php">
+					<form action="adduser.php">
 						<button class="btn btn-default" type="submit">Add Student</button>
 					</form>
 				</div>
@@ -34,12 +34,13 @@
 							</thead>
 							<tbody>
 								<?php
-									$students = Student::getAll();
-									foreach ($students as $student){
+									$users = User::getAll();
+									foreach ($users as $user){
 										echo "<tr>";
-										echo "<td>{$student->getFullname()}</td>";
-										echo "<td>{$student->getEmail()}</td>";
-										echo "<td>{$student->getPhone()}</td>";
+										echo "<td>{$user->getFullname()}</td>";
+										echo "<td>{$user->getEmail()}</td>";
+										echo "<td>{$user->getPhone()}</td>";
+										echo "<td>{$user->getRole()}</td>";
 										echo "<tr>";
 									}
 								?>

@@ -2,28 +2,64 @@
 require_once './dbconnection.php';
 
 class permission{
-    public $username;
-    public $password;
+    private $username;
+    private $password;
 
     function __contruct($u, $p){
         $this->username = $u;
         $this->password = $p;
     }
+	
+	function getUsername() {
+		return $this->username;
+	}
 
-    function __toString(){
-        return $u.$p;
-    }
+	function getPassword() {
+		return $this->password;
+	}
 
-    function isTeacher(){
-        $is_teacher = false;
+	function __toString() {
+		$this->getUsername().$this->getPassword();
+	}
+
+
+	function isTeacher(){
+        $ret = false;
 
         $conn = DbConnection::getConnection();
         
-        $user = $this->username;
-        $pass = $this->password;
+		$user = $this->username;
+		
+		$query = "SELECT role FROM user WHERE username=? AND role='teacher'";
+		$prep = $conn->prepare($query);
+		$prep->bind_param($user);
         
-        DbConnection::getConnection($conn);
+		$prep->execute();
+        if($prep->fetch() == 1){
+            $ret = true;
+        }
+        DbConnection::closeConnection($conn);
+		
+		return $ret;
+    }
+	
+	function isStudent(){
+        $ret = false;
+
+        $conn = DbConnection::getConnection();
+        
+		$user = $this->username;
+		
+		$query = "SELECT role FROM user WHERE username=? AND role='student'";
+		$prep = $conn->prepare($query);
+		$prep->bind_param($user);
+        
+		$prep->execute();
+        if($prep->fetch() == 1){
+            $ret = true;
+        }
+        DbConnection::closeConnection($conn);
+		
+		return $ret;
     }
 }
-
-?>
