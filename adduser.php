@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['teacher'])){
+    // redirect to login
+    header("Location: index.php");
+}
+?>
+
 <?php 
 require_once './user.php';
 if (isset($_POST['btnSubmit'])){

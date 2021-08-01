@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
+    // redirect to login
+    header("Location: login.php");
+}
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -17,7 +26,7 @@
             <div class="row with-margin">
                 <div class="col-sm-12">
                     <form action="adduser.php">
-                        <button class="btn btn-default" type="submit">Add Student</button>
+                        <button class="btn btn-default" type="submit">Add User</button>
                     </form>
                 </div>
             </div>
@@ -27,9 +36,10 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Student name</th>
+                                    <th>Full name</th>
                                     <th>Email address</th>
                                     <th>Phone number</th>
+                                    <th>Role</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -5,26 +5,18 @@ require_once('permission.php');
 if(isset($_POST["username"]) && isset($_POST["password"])){
     $user = $_POST["username"];
     $pass = $_POST["password"];
-//    $user = "test";
-//    $pass = 'passtest';
     $perm = new permission($user, $pass);
     $is_teacher = $perm->isTeacher();
     $is_student = $perm->isStudent();
-    
-//    $msg = '<h4>username: '.$user.'</h4>';
-//    $msg = $msg.'<br><h4>password: '.$pass.'</h4>';
-//    $msg = '<h4>isTeacher: '.$is_teacher.'</h4>';
-//    $msg = '<h4>isStudent: '.$is_student.'</h4>';
     
     if($is_student || $is_teacher){
         $_SESSION['teacher'] = $is_teacher;
         $_SESSION['student'] = $is_student;
         $_SESSION['user'] = $user;
         header("Location: index.php");
-//        $msg = $msg.'<h4 style="color:green">Login Success.</h4>';
         die();
     } else {
-        $msg = $msg.'<h4 style="color:red">Invalid Login.</h4>';
+        $msg = $msg.'<h5 style="color:red">Invalid Login.</h5>';
     }
 }
 ?>

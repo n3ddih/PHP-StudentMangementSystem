@@ -57,11 +57,11 @@ class User {
         // Query
         $query = "INSERT INTO user(username, password, fulname, email, phone, role) VALUES (?, ?, ?, ?, ?, ?);";
         // Prepare and bind
-        $con_prep = $conn->prepare($query);
-        $con_prep->bind_param("ssssss", $user, $pass, $fullname, $email, $phone, $role);
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ssssss", $user, $pass, $fullname, $email, $phone, $role);
         
         // execute
-        $ret = $con_prep->execute();
+        $ret = $stmt->execute();
         // close connection
         DbConnection::closeConnection($conn);
         return $ret;
@@ -75,7 +75,7 @@ class User {
         $result = mysqli_query($conn, $query);
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_object($result)){
-                $user = new Student($row->username, $row->password, $row->fullname, $row->email, $row->phone, $row->role);
+                $user = new User($row->username, $row->password, $row->fullname, $row->email, $row->phone, $row->role);
                 $rows[] = $user;
             }
         }
@@ -88,16 +88,14 @@ class User {
         // Get connection
         $conn = DbConnection::getConnection();
         $query = "DELETE FROM user WHERE username=?;";
-        $con_prep = $conn->prepare($query);
-        $con_prep->bind_param($username);
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$username);
         // execute
-        $ret = $con_prep->execute();
+        $ret = $stmt->execute();
         // close connection
         DbConnection::closeConnection($conn);
         return $ret;
     }
-
-
 }
 
 

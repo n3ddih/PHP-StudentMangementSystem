@@ -32,7 +32,7 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
             <ul>
                 <li><a href="userinfo.php">View users info</a></li>
 
-                <?php if($_SESSION['teacher'])echo '<li><a href="ass_upload.php">Upload assignment</a></li>';?>
+                <?php if($_SESSION['teacher']) echo '<li><a href="ass_upload.php">Upload assignment</a></li>';?>
 
                 <?php if($_SESSION['student']){
                     echo '<li><a href="ass_submit.php">Submit assignment</a></li>';
