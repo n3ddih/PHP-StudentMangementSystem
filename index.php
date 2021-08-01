@@ -30,16 +30,16 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
 		<div class="container">
 			<h4><?php echo "Welcome ".$_SESSION["user"]."!";?></h4>
 			<ul>
-					<li><a href="userinfo.php">View users info</a></li>
+				<li><a href="userinfo.php">View users info</a></li>
 
-					<?php if($_SESSION['teacher']){ echo '<li><a href="ass_upload.php">Upload assignment</a></li>'; }?>
+				<?php if($_SESSION['teacher'])echo '<li><a href="ass_upload.php">Upload assignment</a></li>';?>
 
-					<?php if($_SESSION['student']){
-						echo '<li><a href="ass_submit.php">Submit assignment</a></li>';
-						echo '<li><a href="profile_update.php">Update profile</a></li>';
-					} ?>
+				<?php if($_SESSION['student']){
+					echo '<li><a href="ass_submit.php">Submit assignment</a></li>';
+					echo '<li><a href="profile_update.php">Update profile</a></li>';
+				} ?>
 
-					<li><a href="logout.php">Log Out</a></li>
+				<li><a href="logout.php">Log Out</a></li>
 			</ul>
 		</div>
 	</body>

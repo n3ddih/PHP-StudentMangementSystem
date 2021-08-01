@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Register</title>
-</head>
-<body>
-<h1>Register page</h1>
-
-<form action="register.php" method="POST">
-	<p>Username:</p>
-	<input type="text" name="username" required>
-	<p>Email:</p>
-	<input type="text" name="email">
-	<p>Password:</p>
-	<input type="password" name="password" required>
-	<p>Repeat password:</p>
-	<input type="password" name="password2" required><br>
-	<input type="submit">
-</form>
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Register</title>
+	</head>
+	<body>
+		<div class="row" style="background: #9e9e9e;">
+			<div class="container">
+				<div class="col-sm-12">
+					<h1>Login Panel</h1>
+				</div>
+			</div>
+		</div>
+		<div class="container":>
+			<form action="#" method="post">
+				<div class="form-group">
+					<label for="username">Username:</label>
+					<input type="text" name="username" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="email">Email:</label>
+					<input type="text" name="email" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="password1">Password:</label>
+					<input type="password" name="password1" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="password2">Repeat password:</label>
+					<input type="password" name="password2" class="form-control" required>
+				</div>
+				<br>
+				<input type="submit" class="btn btn-default">
+			</form>
+		</div>
+	</body>
 </html>
