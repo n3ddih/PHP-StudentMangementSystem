@@ -2,65 +2,56 @@
 require_once './dbconnection.php';
 
 class permission{
-	private $username;
-	private $password;
+    protected $username;
+    protected $password;
 
-	function __contruct($u, $p){
-		$this->username = $u;
-		$this->password = $p;
-	}
-	
-	function getUsername() {
-		return $this->username;
-	}
+    function __construct($u, $p){
+        $this->username = $u;
+        $this->password = $p;
+    }
+    
+    function __toString() {
+        return $this->username.":".$this->password;
+    }
 
-	function getPassword() {
-		return $this->password;
-	}
+    function isTeacher(){
+        $ret = false;
 
-	function __toString() {
-		$this->getUsername().$this->getPassword();
-	}
+        $conn = DbConnection::getConnection();
+        
+        $user = $this->username;
+        
+        $query = "SELECT * FROM user WHERE username=? AND role='teacher';";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s",$user);
+        
+        $stmt->execute();
+        if($stmt->fetch() == 1){
+            $ret = true;
+        }
+        DbConnection::closeConnection($conn);
+        
+        return $ret;
+    }
+    
+    function isStudent(){
+        $ret = false;
 
-
-	function isTeacher(){
-		$ret = false;
-
-		$conn = DbConnection::getConnection();
-		
-		$user = $this->username;
-		
-		$query = "SELECT role FROM user WHERE username=? AND role='teacher';";
-		$prep = $conn->prepare($query);
-		$prep->bind_param($user);
-		
-		$prep->execute();
-		if($prep->fetch() == 1){
-			$ret = true;
-		}
-		DbConnection::closeConnection($conn);
-		
-		return $ret;
-	}
-	
-	function isStudent(){
-		$ret = false;
-
-		$conn = DbConnection::getConnection();
-		
-		$user = $this->username;
-		
-		$query = "SELECT role FROM user WHERE username=? AND role='student';";
-		$prep = $conn->prepare($query);
-		$prep->bind_param($user);
-		
-		$prep->execute();
-		if($prep->fetch() == 1){
-			$ret = true;
-		}
-		DbConnection::closeConnection($conn);
-		
-		return $ret;
-	}
+        $conn = DbConnection::getConnection();
+        
+        $user = $this->username;
+        
+        $query = "SELECT * FROM user WHERE username=? AND role='student';";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("s", $user);
+        
+        $stmt->execute();
+        if($stmt->fetch() == 1){
+            $ret = true;
+        }
+        DbConnection::closeConnection($conn);
+        
+        return $ret;
+    }
 }
 ?>
