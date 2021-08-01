@@ -29,7 +29,7 @@ create table user (
 );
 
 insert into user(username, password, fullname, email, phone, role) values ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789', 'Student');
-insert into user(username, password, fullname, email, phone, role) values ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '012342528', 'Teacher');
+insert into user(username, password, fullname, email, phone, role) values ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '0123425289', 'Teacher');
 ```
 
 # Progress
