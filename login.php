@@ -5,14 +5,14 @@ require_once('permission.php');
 if(isset($_POST["username"]) && isset($_POST["password"])){
 	$user = $_POST["username"];
 	$pass = $_POST["password"];
-	$perm = new permission($user, $pass);
-	$is_teacher = $perm->isTeacher();
-	$is_student = $perm->isStudent();
+//	$perm = new permission($user, $pass);
+//	$is_teacher = $perm->isTeacher();
+//	$is_student = $perm->isStudent();
 	
 	$msg = '<h4>username: '.$user.'</h4>';
 	$msg = '<h4>password: '.$pass.'</h4>';
-	$msg = '<h4>isTeacher: '.$is_teacher.'</h4>';
-	$msg = '<h4>isStudent: '.$is_student.'</h4>';
+//	$msg = '<h4>isTeacher: '.$is_teacher.'</h4>';
+//	$msg = '<h4>isStudent: '.$is_student.'</h4>';
 	
 	if($is_student || $is_teacher){
 		$_SESSION['teacher'] = $is_teacher;
@@ -36,14 +36,14 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-	<div class="container">
-		<div class="row" style="background: #9e9e9e;">
-			<div class="container">
-				<div class="col-sm-12">
-					<h1>Login Panel</h1>
-				</div>
+	<div class="row" style="background: #9e9e9e;">
+		<div class="container">
+			<div class="col-sm-12">
+				<h1>Login Panel</h1>
 			</div>
 		</div>
+	</div>
+	<div class="container">
 		<?php if(isset($msg)) echo $msg; ?>
 		<form action="login.php" method="post">
 				<p>Username:</p>
