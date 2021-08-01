@@ -9,11 +9,17 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 	$is_teacher = $perm->isTeacher();
 	$is_student = $perm->isStudent();
 	
+	$msg = '<h4>username: '.$user.'</h4>';
+	$msg = '<h4>password: '.$pass.'</h4>';
+	$msg = '<h4>isTeacher: '.$is_teacher.'</h4>';
+	$msg = '<h4>isStudent: '.$is_student.'</h4>';
+	
 	if($is_student || $is_teacher){
 		$_SESSION['teacher'] = $is_teacher;
 		$_SESSION['student'] = $is_student;
 		$_SESSION['user'] = $user;
-		header("Location: index.php");
+		//header("Location: index.php");
+		$msg = '<h4 style="color:green">Login Success.</h4>';
 	} else {
 		$msg = '<h4 style="color:red">Invalid Login.</h4>';
 	}
@@ -31,7 +37,13 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
 </head>
 <body>
 	<div class="container">
-		<h1>Login Panel</h1>
+		<div class="row" style="background: #9e9e9e;">
+			<div class="container">
+				<div class="col-sm-12">
+					<h1>Login Panel</h1>
+				</div>
+			</div>
+		</div>
 		<?php if(isset($msg)) echo $msg; ?>
 		<form action="login.php" method="post">
 				<p>Username:</p>
