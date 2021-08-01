@@ -16,7 +16,7 @@ if (isset($_POST['btnSubmit'])){
 }
 ?>
 
-<html>
+<html lang="en">
 	<head>
 		<title>Add student</title>
 		<meta charset="UTF-8"/>
@@ -27,23 +27,23 @@ if (isset($_POST['btnSubmit'])){
 			<form action="#" method="post">
 				<div class="form-group">
 					<label for="username">Username:</label>
-					<input type="text" class="form-control" name="user" required>
+					<input type="text" class="form-control" id="username" name="user" required>
 				</div>
 				<div class="form-group">
 					<label for="password">Password:</label>
-					<input type="password" class="form-control" name="pass" required>
+					<input type="password" class="form-control" id="password" name="pass" required>
 				</div>
 				<div class="form-group">
 					<label for="fullname">Student full name:</label>
-					<input type="text" class="form-control" name="fname" required>
+					<input type="text" class="form-control" name="fname" id="fullname" required>
 				</div>
 				<div class="form-group">
 					<label for="email">Email:</label>
-					<input type="email" class="form-control" name="email" required>
+					<input type="email" class="form-control" name="email" id="email" required>
 				</div>
 				<div class="form-group">
 					<label for="phone">Phone number:</label>
-					<input type="tel" pattern="[0-9]{10}" placeholder="0123456789" class="form-control" name="phone" required>
+					<input type="tel" pattern="[0-9]{10}" placeholder="0123456789" class="form-control" name="phone" id="phone" required>
 				</div>
 				<div class="form-group">
 					<label for="role">Role:</label>

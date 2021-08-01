@@ -18,19 +18,19 @@
 			<form action="#" method="post">
 				<div class="form-group">
 					<label for="username">Username:</label>
-					<input type="text" name="username" class="form-control" required>
+					<input type="text" name="username" id="username" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<label for="email">Email:</label>
-					<input type="text" name="email" class="form-control">
+					<input type="text" name="email" id="email" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="password1">Password:</label>
-					<input type="password" name="password1" class="form-control" required>
+					<input type="password" name="password1" id="password1" class="form-control" required>
 				</div>
 				<div class="form-group">
 					<label for="password2">Repeat password:</label>
-					<input type="password" name="password2" class="form-control" required>
+					<input type="password" name="password2" id="password2" class="form-control" required>
 				</div>
 				<br>
 				<input type="submit" class="btn btn-default">

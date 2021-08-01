@@ -7,7 +7,7 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
 }
 ?>
 
-<html>
+<html lang="en">
 	<head>
 		<meta charset="UTF-8">
 		<title>SMS</title>
