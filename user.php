@@ -71,7 +71,7 @@ class User {
 		$rows = array();
 		// Get connection
 		$conn = DbConnection::getConnection();
-		$query = "SELECT * FROM user";
+		$query = "SELECT * FROM user;";
 		$result = mysqli_query($conn, $query);
 		if(mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_object($result)){
@@ -87,7 +87,7 @@ class User {
 	public function delete($username){
 		// Get connection
 		$conn = DbConnection::getConnection();
-		$query = "DELETE FROM user WHERE username=?";
+		$query = "DELETE FROM user WHERE username=?;";
 		$con_prep = $conn->prepare($query);
 		$con_prep->bind_param($username);
 		// execute

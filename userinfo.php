@@ -1,17 +1,17 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>User Profile</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .with-margin{
-                margin-bottom: 7px;
-                margin-top: 5px;
-            }
-        </style>
-    </head>
+	<head>
+		<meta charset="UTF-8">
+		<title>User Profile</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<style>
+			.with-margin{
+				margin-bottom: 7px;
+				margin-top: 5px;
+			}
+		</style>
+	</head>
 	
-    <body>
+	<body>
 		<?php require_once './user.php';?>
 		<div class="container">
 			<div class="row with-margin">

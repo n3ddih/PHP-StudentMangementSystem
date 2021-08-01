@@ -2,24 +2,24 @@
 session_start();
 
 if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
-    // redirect to login
-    header("Location: login.php");
+	// redirect to login
+	header("Location: login.php");
 }
 ?>
 
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>SMS</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .with-margin{
-                margin-bottom: 7px;
-                margin-top: 5px;
-            }
-        </style>
-    </head>
-    <body>
+	<head>
+		<meta charset="UTF-8">
+		<title>SMS</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+		<style>
+			.with-margin{
+				margin-bottom: 7px;
+				margin-top: 5px;
+			}
+		</style>
+	</head>
+	<body>
 		<div class="row" style="background: #9e9e9e;">
 			<div class="container">
 				<div class="col-sm-12">
@@ -28,7 +28,7 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
 			</div>
 		</div>
 		<div class="container">
-			<h4><?php echo "Welcome ".$_SESSION["user"]." !";?></h4>
+			<h4><?php echo "Welcome ".$_SESSION["user"]."!";?></h4>
 			<ul>
 					<li><a href="userinfo.php">View users info</a></li>
 
@@ -42,5 +42,5 @@ if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
 					<li><a href="logout.php">Log Out</a></li>
 			</ul>
 		</div>
-    </body>
+	</body>
 </html>
