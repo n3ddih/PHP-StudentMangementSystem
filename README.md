@@ -14,10 +14,10 @@ Xây dựng website quản lý thông tin sinh viên, tài liệu của 1 lớp 
 ## Setting up database
 
 ```sql
-create database smsdb;
-use smsdb;
+CREATE DATABASE smsdb;
+USE smsdb;
 
-create table user (
+CREATE TABLE user (
   id int auto_increment,
   username varchar(20) unique,
   password varchar(32),
@@ -28,8 +28,11 @@ create table user (
   primary key (id)
 );
 
-insert into user(username, password, fullname, email, phone, role) values ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789', 'Student');
-insert into user(username, password, fullname, email, phone, role) values ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '0123425289', 'Teacher');
+INSERT INTO user(username, password, fullname, email, phone, role) 
+VALUES ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789', 'Student');
+
+INSERT INTO user(username, password, fullname, email, phone, role) 
+VALUES ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '0123425289', 'Teacher');
 ```
 
 # Progress
