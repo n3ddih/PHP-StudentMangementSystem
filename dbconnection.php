@@ -20,4 +20,3 @@ class DbConnection {
         mysqli_close($link);
     }
 }
-?>

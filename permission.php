@@ -1,7 +1,7 @@
 <?php
 require_once './dbconnection.php';
 
-class permission{
+class Permission{
     protected $username;
     protected $password;
 
@@ -54,4 +54,3 @@ class permission{
         return $ret;
     }
 }
-?>

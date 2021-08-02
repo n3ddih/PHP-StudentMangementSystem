@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['teacher'])){
     // redirect to login
     header("Location: index.php");
@@ -18,9 +17,9 @@ if (isset($_POST['btnSubmit'])){
     $role = $_POST['role'];
     $user = new User($username, $password, $fullname, $email, $phone, $role);
     if($user->save()){
-        echo 'Student added successfully';
+        $msg = '<h5 style="color:green">Student added successfully</h5>';
     } else {
-        echo 'Added fail';
+        $msg = '<h5 style="color:red">Added fail</h5>';
     }
 }
 ?>
@@ -29,11 +28,11 @@ if (isset($_POST['btnSubmit'])){
     <head>
         <title>Add student</title>
         <meta charset="UTF-8"/>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
-            <form action="#" method="post">
+            <form action="#" method="post" style="margin-top: 37px;">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" class="form-control" id="username" name="user" required>
@@ -63,6 +62,7 @@ if (isset($_POST['btnSubmit'])){
                 </div>
                 <button type="submit" class="btn btn-default" name="btnSubmit">Add</button>
             </form>
+            <?php if(isset($msg)){ echo $msg; }?>
         </div>
     </body>
 </html>

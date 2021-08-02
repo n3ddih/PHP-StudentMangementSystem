@@ -84,18 +84,6 @@ class User {
         return $rows;
     }
     
-    public function delete($username){
-        // Get connection
-        $conn = DbConnection::getConnection();
-        $query = "DELETE FROM user WHERE username=?;";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("s",$username);
-        // execute
-        $ret = $stmt->execute();
-        // close connection
-        DbConnection::closeConnection($conn);
-        return $ret;
-    }
 }
 
 
