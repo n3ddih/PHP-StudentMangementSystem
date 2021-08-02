@@ -39,19 +39,20 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         </div>
     </div>
     <div class="container">
+        <div class="col-sm-6">
         <?php if(isset($msg)){ echo $msg; }?>
-        <form action="#" method="post">
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" class="form-control" required><br>
-            </div>
-            <input type="Submit" class="btn btn-default">
-            
-        </form>
+            <form action="#" method="post">
+                <div class="form-group" style="margin-top: 16px;">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" class="form-control" required><br>
+                </div>
+                <input type="Submit" class="btn btn-default">
+            </form>
+        </div>
         <br>   
     </div>
 </body>
