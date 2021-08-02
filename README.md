@@ -39,14 +39,14 @@ insert into user(username, password, fullname, email, phone, role) values ('vinh
 - Tạo CSDL người dùng
 - Tạo file index, trang xem info và chức năng thêm người dùng (trong file xem thông tin userinfo.php)
 - Chức năng xác thực người dùng, login
+- Chức năng sửa, xóa người dùng
 
 ## Đang trong quá trình
 
-Chức năng sửa, xóa người dùng
+Nhắn cho người dùng real time
 
 ## Todo
 
-- Gửi tin nhắn cho người dùng
 - Giáo viên upload bài tập --> sinh viên thấy danh sách bài tập
 - Sinh viên upload bài làm
 - Trò chơi giải đố
