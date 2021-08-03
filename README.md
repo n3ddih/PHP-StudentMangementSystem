@@ -46,10 +46,10 @@ VALUES ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '0123425289'
 
 ## Đang trong quá trình
 
-Nhắn cho người dùng real time
+Giáo viên upload bài tập --> sinh viên thấy danh sách bài tập
 
 ## Todo
 
-- Giáo viên upload bài tập --> sinh viên thấy danh sách bài tập
+- Nhắn cho người dùng real time
 - Sinh viên upload bài làm
 - Trò chơi giải đố
