@@ -1,11 +1,7 @@
 <?php
-session_start();
+include 'static/auth.php';
 
-if(!isset($_SESSION['teacher']) || !isset($_SESSION['student'])){
-    // redirect to login
-    header("Location: login.php");
-}
-
+require_once './user.php';
 // delete user
 if (isset($_POST['delete'])){
     $username = $_POST['delete'];
@@ -31,20 +27,21 @@ if (isset($_POST['delete'])){
         <meta charset="UTF-8">
         <title>User Profile</title>
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     
     <body>
-        <?php require_once './user.php';?>
+        <?php include('static/header.html'); ?>
         <div class="container">
             <?php if(isset($_SESSION['teacher'])) { ?>
             <div class="row" style="margin-top: 10px;">
                 <div class="col-md-1">
-                    <form action="adduser.php">
+                    <form action="useradd.php">
                         <button class="btn btn-secondary" type="submit">Add User</button>
                     </form>
                 </div>
                 <div class="col-md-1">
-                    <form action="updateuser.php">
+                    <form action="userupdate.php">
                         <button class="btn btn-secondary" type="submit">Update User</button>
                     </form>
                 </div>
@@ -73,16 +70,23 @@ if (isset($_POST['delete'])){
                                     echo "<td>{$user->getEmail()}</td>";
                                     echo "<td>{$user->getPhone()}</td>";
                                     echo "<td>{$user->getRole()}</td>";
+                                    echo "<td>";
+                                    // message button
+                                    echo '<form action="chat.php" style="float:left;margin-right: 8px;">'
+                                    . '<button class="btn" type="submit" name="chat" title="Chat with is user">'
+                                            . '<i class="fa fa-envelope"></i></button></form>';
+                                    
                                     if($_SESSION['teacher']){
                                         // update button
-                                        echo '<td><form action="updateuser.php" method="post" style="float:left;margin-right: 8px;">'
+                                        echo '<form action="updateuser.php" method="post" style="float:left;margin-right: 8px;">'
                                         . '<button class="btn" type="submit" name="update" title="Delete" value="'.$user->getUsername().'">'
-                                                . '<i class="fa fa-save"></i></button></form></td>';
+                                                . '<i class="fa fa-save"></i></button></form>';
                                         // delete button
-                                        echo '<td><form action="#" method="post" style="float:left;">'
+                                        echo '<form action="#" method="post" style="float:left;">'
                                         . '<button class="btn" type="submit" name="delete" title="Delete" value="'.$user->getUsername().'">'
-                                                . '<i class="fa fa-trash"></i></button></form></td>';
+                                                . '<i class="fa fa-trash"></i></button></form>';
                                     }
+                                    echo "</td>";
                                     echo "<tr>";
                                 }
                                    

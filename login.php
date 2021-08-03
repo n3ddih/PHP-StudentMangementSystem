@@ -5,6 +5,7 @@ require_once('permission.php');
 if(isset($_POST["username"]) && isset($_POST["password"])){
     $user = $_POST["username"];
     $pass = $_POST["password"];
+    
     $perm = new Permission($user, $pass);
     $is_teacher = $perm->isTeacher();
     $is_student = $perm->isStudent();
@@ -31,10 +32,10 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="row" style="background: #9e9e9e;">
+    <div class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <div class="col-sm-12">
-                <h1>Login Panel</h1>
+                <h1 style="color: whitesmoke">Login Panel</h1>
             </div>
         </div>
     </div>
