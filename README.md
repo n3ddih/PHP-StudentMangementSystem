@@ -13,6 +13,7 @@ Xây dựng website quản lý thông tin sinh viên, tài liệu của 1 lớp 
 
 ## Setting up database
 
+- Create table, database:
 ```sql
 CREATE DATABASE smsdb;
 USE smsdb;
@@ -33,6 +34,13 @@ VALUES ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789',
 
 INSERT INTO user(username, password, fullname, email, phone, role) 
 VALUES ('vinhvv', '123@123a', 'Vuong Van Vinh', 'vinhvv@gmail.com', '0123425289', 'Teacher');
+```
+
+- Create user:
+```mysql
+CREATE USER 'smsadmin'@'localhost' IDENTIFIED BY 'admin@SMS1';
+GRANT ALL PRIVILEGES ON smsdb.* TO 'smsadmin'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
 # Progress
