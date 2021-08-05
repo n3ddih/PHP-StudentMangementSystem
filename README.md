@@ -60,10 +60,11 @@ FLUSH PRIVILEGES;
 - Chức năng sửa, xóa người dùng
 - Giáo viên upload bài tập --> sinh viên thấy danh sách bài tập
 - Sinh viên upload bài làm
+- Trò chơi giải đố
 
 ## Đang trong quá trình
 
-Trò chơi giải đố
+Nhắn cho người dùng real time
 
 ## Todo
 
