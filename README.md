@@ -69,3 +69,47 @@ Nhắn cho người dùng real time
 ## Todo
 
 - Nhắn cho người dùng real time
+
+# Demo
+
+### Login page
+
+![image](https://user-images.githubusercontent.com/80664686/128385627-69d97ed5-df28-458d-90c5-c8f37334af1f.png)
+
+### Index page
+
+![image](https://user-images.githubusercontent.com/80664686/128385812-20875750-8cbc-4ced-b618-f4bef7092a5d.png)
+
+### Profile page
+
+![image](https://user-images.githubusercontent.com/80664686/128386437-74e16131-5770-4b52-93e4-bebb7afc7f0a.png)
+
+### User list
+
+- Student view:
+
+![image](https://user-images.githubusercontent.com/80664686/128386564-17644249-f00b-4452-8414-e4733f42509b.png)
+
+- Teacher view:
+
+![image](https://user-images.githubusercontent.com/80664686/128387278-b3e921b9-4c53-4dcc-aacd-a212a206357f.png)
+
+### Assignment list
+
+- Student view:
+
+![image](https://user-images.githubusercontent.com/80664686/128386778-b1e03706-6dad-491c-862b-bfbf3a34d3c5.png)
+
+- Teacher view:
+
+![image](https://user-images.githubusercontent.com/80664686/128387353-c663953e-d512-4be5-ac17-adca63dbfd89.png)
+
+### Game
+
+- Student view:
+
+![image](https://user-images.githubusercontent.com/80664686/128386905-dd413111-1ee2-46aa-8388-46329e667af1.png)
+
+- Teacher view:
+
+![image](https://user-images.githubusercontent.com/80664686/128387460-ecfb7b49-fd52-4cf7-ae46-c03b8e56bf48.png)
