@@ -30,9 +30,10 @@ CREATE TABLE user (
 );
 
 CREATE TABLE challenge (
-  id int auto_increment;
-  name varchar(50);
-  hint varchar(200);
+  id int auto_increment,
+  name varchar(50),
+  hint varchar(200),
+  primary key (id)
 );
 
 INSERT INTO user(username, password, fullname, email, phone, role) 
