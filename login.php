@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require_once('permission.php');
+require_once('template/permission.php');
 if(isset($_POST["username"]) && isset($_POST["password"])){
     $user = $_POST["username"];
     $pass = $_POST["password"];
@@ -17,7 +17,7 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
         header("Location: index.php");
         die();
     } else {
-        $msg = '<h5 style="color:red">Invalid Login.</h5>';
+        $msg = '<h5 style="color:red">Wrong username or password.</h5>';
     }
 }
 ?>
@@ -28,33 +28,32 @@ if(isset($_POST["username"]) && isset($_POST["password"])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>SMS Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        <div class="container">
-            <div class="col-sm-12">
-                <h1 style="color: whitesmoke">Login Panel</h1>
-            </div>
-        </div>
-    </div>
+    <?php include 'template/header.php'; ?>
     <div class="container">
         <div class="col-sm-6">
-        <?php if(isset($msg)){ echo $msg; }?>
-            <form action="#" method="post">
-                <div class="form-group" style="margin-top: 16px;">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" class="form-control" required>
+            <div class="card">
+                <div class="card-header">Login Panel</div>
+                <div class="card-body">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" name="username" id="username" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" class="form-control" required><br>
+                        </div>
+                        <input type="Submit" class="btn btn-default">
+                    </form>
+                    <br>
+                    <?php if(isset($msg)){ echo $msg; }?>
                 </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" class="form-control" required><br>
-                </div>
-                <input type="Submit" class="btn btn-default">
-            </form>
-        </div>
-        <br>   
+            </div>
+        </div> 
     </div>
 </body>
 </html>

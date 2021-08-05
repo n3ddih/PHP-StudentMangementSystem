@@ -1,13 +1,12 @@
 <?php
 session_start();
 if(!isset($_SESSION['teacher'])){
-    
     header("Location: userinfo.php");
 }
 ?>
 
 <?php 
-require_once './user.php';
+require_once 'template/user.php';
 if (isset($_POST['btnSubmit'])){
     $username = $_POST['user'];
     $password = $_POST['pass'];
@@ -29,8 +28,10 @@ if (isset($_POST['btnSubmit'])){
         <title>Add student</title>
         <meta charset="UTF-8"/>
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
     <body>
+        <?php include 'template/header.php';?>
         <div class="container">
             <form action="#" method="post" style="margin-top: 37px;">
                 <div class="form-group">

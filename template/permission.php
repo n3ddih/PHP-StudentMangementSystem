@@ -1,5 +1,5 @@
 <?php
-require_once './dbconnection.php';
+require_once 'template/dbconnection.php';
 
 class Permission{
     protected $username;
@@ -20,10 +20,11 @@ class Permission{
         $conn = DbConnection::getConnection();
         
         $user = $this->username;
+        $pass = $this->password;
         
-        $query = "SELECT * FROM user WHERE username=? AND role='teacher';";
+        $query = "SELECT * FROM user WHERE username=? AND password=? AND role='teacher';";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("s",$user);
+        $stmt->bind_param("ss",$user, $pass);
         
         $stmt->execute();
         if($stmt->fetch() == 1){
@@ -40,10 +41,11 @@ class Permission{
         $conn = DbConnection::getConnection();
         
         $user = $this->username;
+        $pass = $this->password;
         
-        $query = "SELECT * FROM user WHERE username=? AND role='student';";
+        $query = "SELECT * FROM user WHERE username=? AND password=? AND role='student';";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("s", $user);
+        $stmt->bind_param("ss",$user, $pass);
         
         $stmt->execute();
         if($stmt->fetch() == 1){

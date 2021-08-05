@@ -1,7 +1,7 @@
 <?php
-include 'static/auth.php';
+include 'template/auth.php';
 
-require_once './user.php';
+require_once 'template/user.php';
 // delete user
 if (isset($_POST['delete'])){
     $username = $_POST['delete'];
@@ -31,18 +31,13 @@ if (isset($_POST['delete'])){
     </head>
     
     <body>
-        <?php include('static/header.html'); ?>
+        <?php include 'template/header.php'; ?>
         <div class="container">
-            <?php if(isset($_SESSION['teacher'])) { ?>
+            <?php if($_SESSION['teacher']) { ?>
             <div class="row" style="margin-top: 10px;">
                 <div class="col-md-1">
                     <form action="useradd.php">
                         <button class="btn btn-secondary" type="submit">Add User</button>
-                    </form>
-                </div>
-                <div class="col-md-1">
-                    <form action="userupdate.php">
-                        <button class="btn btn-secondary" type="submit">Update User</button>
                     </form>
                 </div>
             </div>
@@ -72,17 +67,17 @@ if (isset($_POST['delete'])){
                                     echo "<td>{$user->getRole()}</td>";
                                     echo "<td>";
                                     // message button
-                                    echo '<form action="chat.php" style="float:left;margin-right: 8px;">'
-                                    . '<button class="btn" type="submit" name="chat" title="Chat with is user">'
+                                    echo '<form action="#" style="float:left;margin-right: 8px;">'
+                                    . '<button class="btn" type="submit" name="chat" title="Chat with this user">'
                                             . '<i class="fa fa-envelope"></i></button></form>';
                                     
                                     if($_SESSION['teacher']){
                                         // update button
-                                        echo '<form action="updateuser.php" method="post" style="float:left;margin-right: 8px;">'
-                                        . '<button class="btn" type="submit" name="update" title="Delete" value="'.$user->getUsername().'">'
-                                                . '<i class="fa fa-save"></i></button></form>';
+                                        echo '<form action="userprofile.php" method="post" style="float:left;margin-right: 8px;">'
+                                        . '<button class="btn" type="submit" name="update" title="Edit info" value="'.$user->getUsername().'">'
+                                                . '<i class="fa fa-edit"></i></button></form>';
                                         // delete button
-                                        echo '<form action="#" method="post" style="float:left;">'
+                                        echo '<form action="#" method="post" style="float:left;margin-right: 8px;">'
                                         . '<button class="btn" type="submit" name="delete" title="Delete" value="'.$user->getUsername().'">'
                                                 . '<i class="fa fa-trash"></i></button></form>';
                                     }

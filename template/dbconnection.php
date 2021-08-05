@@ -10,8 +10,8 @@ class DbConnection {
         $conn = new mysqli($hostname, $username, $password, $dbname);
 
         if($conn->connect_error) {
-                die('Cannot connect to the database ' . mysqli_error($conn));
-                exit();
+            die('Cannot connect to the database ' . mysqli_error($conn));
+            exit();
         }
         return $conn;
     }
