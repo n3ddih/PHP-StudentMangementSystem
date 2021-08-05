@@ -29,6 +29,12 @@ CREATE TABLE user (
   primary key (id)
 );
 
+CREATE TABLE challenge (
+  id int auto_increment;
+  name varchar(50);
+  hint varchar(200);
+);
+
 INSERT INTO user(username, password, fullname, email, phone, role) 
 VALUES ('vutq13', '123@123a', 'Tran Quang Vu', 'vutq13@gmail.com', '0234156789', 'Student');
 
